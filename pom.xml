@@ -3,9 +3,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.unq.ui</groupId>
-    <artifactId>instagram</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.github.unq-ui</groupId>
+    <artifactId>2020s2-instagram</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>org.unq.ui.instagram</name>

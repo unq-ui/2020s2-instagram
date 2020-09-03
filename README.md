@@ -1,8 +1,33 @@
 # UNQ » UIs » TP Instagram
 
+[![JitPack](https://jitpack.io/v/unq-ui/2020s2-instagram.svg)](https://jitpack.io/#unq-ui/2020s2-instagram)
+
 Instagram es una plataforma donde los usuarios suben fotos y pueden comentar las fotos ajenas.
 
 ## Especificación de Dominio
+
+### Dependencia
+
+Agregar el repositorio:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Agregar la dependencia:
+
+```xml
+<dependency>
+    <groupId>com.github.unq-ui</groupId>
+    <artifactId>2020s2-instagram</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 Toda interacción con el dominio se hace a través de la clase `InstagramSystem`. La programación del dominio ya es proveído por la cátedra.
 
