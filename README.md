@@ -41,9 +41,9 @@ import org.ui.model.DraftPost
 
 val system = InstagramSystem()
 
-val a1 = system.registerAuthor("Name 1","name1@gmail.com", "pass1","https://pix.example/1.png")
-val a2 = system.registerAuthor("Name 2","name2@gmail.com", "pass2","https://pix.example/2.png")
-val a3 = system.registerAuthor("Name 3","name3@gmail.com", "pass3","https://pix.example/3.png")
+val a1 = system.register("Name 1","name1@gmail.com", "pass1","https://pix.example/1.png")
+val a2 = system.register("Name 2","name2@gmail.com", "pass2","https://pix.example/2.png")
+val a3 = system.register("Name 3","name3@gmail.com", "pass3","https://pix.example/3.png")
 
 system.addPost(a1.id, DraftPost("https://imgageLink.com/portrait1.png", "https://imgageLink.com/landscape1.png", "description1"))
 system.addPost(a2.id, DraftPost("https://imgageLink.com/portrait2.png", "https://imgageLink.com/landscape2.png", "description2"))
@@ -66,7 +66,7 @@ val system = getInstagramSystem()
 fun login(email: String, password: String): User
 
 // @Throw UsedEmail si `email` ya está en uso
-fun register(name: String, email: String, password: String, image: String): Unit
+fun register(name: String, email: String, password: String, image: String): User
 
 // @Throw NotFound si `userId` no existe
 fun getUser(userId: String): User
