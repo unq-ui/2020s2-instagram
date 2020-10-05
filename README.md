@@ -94,11 +94,14 @@ fun updateLike(postId: String, userId: String): Post
 // @Throw NotFound si `postId` o `userId` no existen
 fun updateFollower(fromUserId: String, toUserId: String): Unit
 
+// @Throw NotATag si el tag parametro no contine `#`
 fun searchByTag(tag: String): List<Post>
 
 fun searchByUserName(name: String): List<Post>
 
 fun searchByUserId(userId: String): List<Post>
+
+fun searchByName(name: String): List<User>
 
 // @Throw NotFound si `userId` no existe
 fun timeline(userId: String): List<Post>
