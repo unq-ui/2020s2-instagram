@@ -40,11 +40,22 @@ private fun addComments(instagramSystem: InstagramSystem) {
     }
 }
 
+private fun addLikes(instagramSystem: InstagramSystem) {
+    val posts = instagramSystem.posts
+    instagramSystem.users.forEach {user ->
+        val selectedPosts = List(75) { posts[random.nextInt(0, posts.size - 1)] }
+        selectedPosts.forEach {
+            instagramSystem.updateLike(it.id, user.id)
+        }
+    }
+}
+
 fun getInstagramSystem(): InstagramSystem {
     val instagramSystem = InstagramSystem()
     addUsers(instagramSystem)
     addPhotos(instagramSystem)
     addFollowers(instagramSystem)
     addComments(instagramSystem)
+    addLikes(instagramSystem)
     return instagramSystem
 }

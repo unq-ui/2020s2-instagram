@@ -299,4 +299,33 @@ class InstagramSystemTest {
         val instagramSystem = getInstagramSystemWithTwoUsersAndOnePostPerUser()
         assertFailsWith<NotFound> { instagramSystem.timeline("u_1000") }
     }
+
+    @Test
+    fun searchByName() {
+        val instagramSystem = getInstagramSystemWithTwoUsersAndOnePostPerUser()
+        val result = instagramSystem.searchByName("ju")
+        assertEquals(result.size, 1)
+        assertEquals(result[0].name, "juan")
+    }
+
+    @Test
+    fun searchByNameWithoutName() {
+        val instagramSystem = getInstagramSystemWithTwoUsersAndOnePostPerUser()
+        val result = instagramSystem.searchByName("")
+        assertEquals(result.size, 0)
+    }
+
+    @Test
+    fun searchByNameOnlySpacesName() {
+        val instagramSystem = getInstagramSystemWithTwoUsersAndOnePostPerUser()
+        val result = instagramSystem.searchByName("   ")
+        assertEquals(result.size, 0)
+    }
+
+    @Test
+    fun searchByNameWithSameLetter() {
+        val instagramSystem = getInstagramSystemWithTwoUsersAndOnePostPerUser()
+        val result = instagramSystem.searchByName("a")
+        assertEquals(result.size, 2)
+    }
 }

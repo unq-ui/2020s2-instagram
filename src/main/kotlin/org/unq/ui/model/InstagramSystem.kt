@@ -89,6 +89,11 @@ class InstagramSystem(val users: MutableList<User> = mutableListOf(), val posts:
         return posts.filter { it.user == user }.sortedByDescending { it.date }
     }
 
+    fun searchByName(name: String): List<User> {
+        if (name.isBlank()) return listOf()
+        return users.filter { it.name.contains(name, true) }.sortedBy { it.name }
+    }
+
     fun timeline(userId: String): List<Post> {
         val user = getUser(userId)
         return posts.filter { user.followers.contains(it.user) }.sortedByDescending { it.date }
